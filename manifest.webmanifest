@@ -1,6 +1,6 @@
 {
-  "name": "Budgetly — Personal & Business Money Tracker",
-  "short_name": "Budgetly",
+  "name": "Kila Coin — Track Every Coin",
+  "short_name": "Kila Coin",
   "description": "Simple Kenyan budgeting and M-Pesa spending tracker for households and small businesses.",
   "start_url": "./index.html",
   "scope": "./",
