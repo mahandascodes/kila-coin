@@ -1,4 +1,4 @@
-# Budgetly — Personal & Business Money Tracker (Kenya)
+# Kila Coin — Track Every Coin
 
 A simple, offline-first budgeting and M-Pesa spending tracker for Kenyan households and small businesses.
 
