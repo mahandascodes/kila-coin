@@ -165,7 +165,8 @@ body {
 
 /* ---------- Grid ---------- */
 .grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 16px; align-items: start; }
-.col-main, .col-side { display: flex; flex-direction: column; gap: 16px; }
+.col-main, .col-side { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.card, .panel, .cat-row > *, .add-form > *, .tx-form-row > *, .goal-form > * { min-width: 0; }
 
 .panel { padding: 20px; }
 .panel-head {
@@ -440,9 +441,9 @@ body {
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
-  .summary { grid-template-columns: repeat(2, 1fr); }
-  .grid { grid-template-columns: 1fr; }
-  .goal-form { grid-template-columns: 1fr 1fr; }
+  .summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid { grid-template-columns: minmax(0, 1fr); }
+  .goal-form { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
 }
 
 @media (max-width: 600px) {
@@ -457,7 +458,7 @@ body {
   .ledger-hint { display: none; }
   .cat-head { display: none; }
   .cat-row {
-    grid-template-columns: 1fr 1fr 34px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 34px;
     grid-template-areas: "name name del" "budget spent spent";
     row-gap: 8px;
   }
@@ -465,12 +466,12 @@ body {
   .cat-budget-cell { grid-area: budget; }
   .cat-spent-cell { grid-area: spent; }
   .cat-del { grid-area: del; }
-  .add-form { grid-template-columns: 1fr; }
+  .add-form { grid-template-columns: minmax(0, 1fr); }
   .add-form .btn { width: 100%; }
-  .tx-form-row, .tx-form-row:nth-child(2) { grid-template-columns: 1fr; }
-  .goal-form { grid-template-columns: 1fr; }
+  .tx-form-row, .tx-form-row:nth-child(2) { grid-template-columns: minmax(0, 1fr); }
+  .goal-form { grid-template-columns: minmax(0, 1fr); }
   .goal-form .btn { width: 100%; }
-  .pv-row { grid-template-columns: 24px 1fr 34px; grid-template-areas: "chk main del" "amt cat cat"; row-gap: 7px; }
+  .pv-row { grid-template-columns: 24px minmax(0, 1fr) 34px; grid-template-areas: "chk main del" "amt cat cat"; row-gap: 7px; }
   .pv-row input[type="checkbox"] { grid-area: chk; }
   .pv-main { grid-area: main; }
   .pv-amt { grid-area: amt; }
